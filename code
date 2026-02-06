@@ -1,0 +1,16 @@
+clc;
+clear;
+close all;
+V = 50:10:200;
+Ra = 0.5;        
+Ia = 10;        
+K = 1.2;        
+speed = (V - Ia*Ra) / K;
+speed_rpm = speed * 60 / (2*pi);
+disp(speed_rpm)
+figure;
+plot(V, speed_rpm, 'b-o', 'LineWidth', 2);
+grid on;
+xlabel('Armature Voltage (V)');
+ylabel('Speed (RPM)');
+title('DC Motor Speed Control using Armature Voltage Control');
